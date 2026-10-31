@@ -1,0 +1,4 @@
+model,brier_raw,brier_cal,ece_raw,ece_cal
+LogReg,0.2556,0.2521,0.0932,0.0824
+GaussianNB,0.4383,0.2476,0.4406,0.0493
+HistGB,0.1066,0.1464,0.0258,0.1659
