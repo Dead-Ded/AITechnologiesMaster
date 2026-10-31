@@ -1,7 +1,0 @@
-split,model,n_eval,PR_AUC,ROC_AUC,Brier
-random,LogReg,2957,0.5104,0.6059,0.2367
-random,GaussianNB,2957,0.4797,0.5723,0.4194
-random,HistGB,2957,0.8872,0.9241,0.1059
-group,LogReg,2957,0.5176,0.6057,0.2367
-group,GaussianNB,2957,0.4826,0.5782,0.4439
-group,HistGB,2957,0.9002,0.9287,0.1021
