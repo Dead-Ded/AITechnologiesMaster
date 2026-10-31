@@ -1,0 +1,55 @@
+{
+  "protocol": "GroupKFold(5) by group_id, target=Severity>=3",
+  "subsample_rows": 2957,
+  "base_rate": 0.4346,
+  "best_params": {
+    "LogReg": {
+      "m__solver": "liblinear",
+      "m__penalty": "l1",
+      "m__class_weight": null,
+      "m__C": 3.0
+    },
+    "GaussianNB": {
+      "m__var_smoothing": 1e-07
+    },
+    "HistGB": {
+      "validation_fraction": 0.1,
+      "min_samples_leaf": 20,
+      "max_leaf_nodes": 31,
+      "max_iter": 200,
+      "max_depth": null,
+      "learning_rate": 0.1,
+      "l2_regularization": 0.0,
+      "early_stopping": true
+    }
+  },
+  "summary": [
+    {
+      "model": "LogReg",
+      "best_PR_AUC": 0.5226,
+      "best_ROC_AUC": 0.6073,
+      "best_Brier": 0.2367,
+      "best_F1": 0.4231,
+      "n_configs": 9,
+      "seconds": 7.9
+    },
+    {
+      "model": "GaussianNB",
+      "best_PR_AUC": 0.5172,
+      "best_ROC_AUC": 0.6028,
+      "best_Brier": 0.4332,
+      "best_F1": 0.1176,
+      "n_configs": 4,
+      "seconds": 0.6
+    },
+    {
+      "model": "HistGB",
+      "best_PR_AUC": 0.894,
+      "best_ROC_AUC": 0.9261,
+      "best_Brier": 0.1063,
+      "best_F1": 0.8382,
+      "n_configs": 16,
+      "seconds": 25.1
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+Loading kt3/df_with_groups.csv.gz ...
+Using 50,000 rows (even time-stride subsample)
+Pos rate P(Severity>=3) = 0.4346  (PR-AUC baseline)
+
+======================================================================
+LogReg: RandomizedSearchCV (9 configs x 5 folds, 7.9s)
+{"params": {"m__solver": "liblinear", "m__penalty": "l1", "m__class_weight": null, "m__C": 3.0}, "test_PR_AUC": 0.5226, "std_PR_AUC": 0.0243, "test_ROC_AUC": 0.6073, "test_Brier": 0.2367, "train_PR_AUC": 0.5377}
+{"params": {"m__solver": "saga", "m__penalty": "l1", "m__class_weight": "balanced", "m__C": 1.0}, "test_PR_AUC": 0.5226, "std_PR_AUC": 0.0238, "test_ROC_AUC": 0.6073, "test_Brier": 0.2406, "train_PR_AUC": 0.5368}
+{"params": {"m__solver": "liblinear", "m__penalty": "l1", "m__class_weight": null, "m__C": 10.0}, "test_PR_AUC": 0.5226, "std_PR_AUC": 0.0244, "test_ROC_AUC": 0.6072, "test_Brier": 0.2367, "train_PR_AUC": 0.5377}
+{"params": {"m__solver": "liblinear", "m__penalty": "l2", "m__class_weight": null, "m__C": 1.0}, "test_PR_AUC": 0.5225, "std_PR_AUC": 0.0244, "test_ROC_AUC": 0.6072, "test_Brier": 0.2367, "train_PR_AUC": 0.5377}
+{"params": {"m__solver": "liblinear", "m__penalty": "l2", "m__class_weight": null, "m__C": 3.0}, "test_PR_AUC": 0.5225, "std_PR_AUC": 0.0244, "test_ROC_AUC": 0.6072, "test_Brier": 0.2367, "train_PR_AUC": 0.5377}
+
+   Вклад гиперпараметров (mean test PR-AUC по значениям):
+     C                      10.0:0.5226, 3.0:0.5224, 1.0:0.5223, 0.01:0.4998
+     penalty                l2:0.5223, l1:0.5134
+     solver                 saga:0.5224, liblinear:0.5149
+     class_weight           None:0.5225, balanced:0.5132
+
+   overfit gap (train-test PR-AUC): mean=0.0150, best config gap=0.0150
+
+======================================================================
+GaussianNB: RandomizedSearchCV (4 configs x 5 folds, 0.6s)
+{"params": {"m__var_smoothing": 1e-07}, "test_PR_AUC": 0.5172, "std_PR_AUC": 0.0254, "test_ROC_AUC": 0.6028, "test_Brier": 0.4332, "train_PR_AUC": 0.524}
+{"params": {"m__var_smoothing": 9.999999999999999e-06}, "test_PR_AUC": 0.5172, "std_PR_AUC": 0.0254, "test_ROC_AUC": 0.6028, "test_Brier": 0.375, "train_PR_AUC": 0.524}
+{"params": {"m__var_smoothing": 0.1}, "test_PR_AUC": 0.5168, "std_PR_AUC": 0.025, "test_ROC_AUC": 0.6023, "test_Brier": 0.3789, "train_PR_AUC": 0.5241}
+{"params": {"m__var_smoothing": 1.0}, "test_PR_AUC": 0.516, "std_PR_AUC": 0.0236, "test_ROC_AUC": 0.6002, "test_Brier": 0.3087, "train_PR_AUC": 0.5252}
+
+   Вклад гиперпараметров (mean test PR-AUC по значениям):
+     var_smoothing          9.999999999999999e-06:0.5172, 1e-07:0.5172, 0.1:0.5168, 1.0:0.5160
+
+   overfit gap (train-test PR-AUC): mean=0.0075, best config gap=0.0068
+
+======================================================================
+HistGB: RandomizedSearchCV (16 configs x 5 folds, 25.1s)
+{"params": {"validation_fraction": 0.1, "min_samples_leaf": 20, "max_leaf_nodes": 31, "max_iter": 200, "max_depth": null, "learning_rate": 0.1, "l2_regularization": 0.0, "early_stopping": true}, "test_PR_AUC": 0.894, "std_PR_AUC": 0.0137, "test_ROC_AUC": 0.9261, "test_Brier": 0.1063, "train_PR_AUC": 0.9829}
+{"params": {"validation_fraction": 0.1, "min_samples_leaf": 20, "max_leaf_nodes": 31, "max_iter": 200, "max_depth": 12, "learning_rate": 0.03, "l2_regularization": 0.0, "early_stopping": true}, "test_PR_AUC": 0.8914, "std_PR_AUC": 0.014, "test_ROC_AUC": 0.9259, "test_Brier": 0.1071, "train_PR_AUC": 0.9785}
+{"params": {"validation_fraction": 0.1, "min_samples_leaf": 20, "max_leaf_nodes": 31, "max_iter": 200, "max_depth": null, "learning_rate": 0.1, "l2_regularization": 1.0, "early_stopping": true}, "test_PR_AUC": 0.8908, "std_PR_AUC": 0.0136, "test_ROC_AUC": 0.9256, "test_Brier": 0.1059, "train_PR_AUC": 0.9859}
+{"params": {"validation_fraction": 0.1, "min_samples_leaf": 20, "max_leaf_nodes": 63, "max_iter": 200, "max_depth": 8, "learning_rate": 0.1, "l2_regularization": 0.1, "early_stopping": true}, "test_PR_AUC": 0.8891, "std_PR_AUC": 0.0142, "test_ROC_AUC": 0.922, "test_Brier": 0.1094, "train_PR_AUC": 0.9862}
+{"params": {"validation_fraction": 0.1, "min_samples_leaf": 20, "max_leaf_nodes": 15, "max_iter": 200, "max_depth": 12, "learning_rate": 0.05, "l2_regularization": 0.0, "early_stopping": true}, "test_PR_AUC": 0.8861, "std_PR_AUC": 0.0127, "test_ROC_AUC": 0.9204, "test_Brier": 0.1134, "train_PR_AUC": 0.9659}
+
+   Вклад гиперпараметров (mean test PR-AUC по значениям):
+     learning_rate          0.1:0.8834, 0.03:0.8775, 0.05:0.8692
+     max_leaf_nodes         31:0.8820, 15:0.8760, 63:0.8683
+     min_samples_leaf       20:0.8889, 50:0.8816, 100:0.8528
+     max_depth              12.0:0.8793, 8.0:0.8770, nan:0.8748, 0.0:nan
+     l2_regularization      0.0:0.8822, 0.1:0.8776, 1.0:0.8691
+
+   overfit gap (train-test PR-AUC): mean=0.0790, best config gap=0.0890
+
+======================================================================
+Summary (CV GroupKFold, refit=PR-AUC):
+     model  best_PR_AUC  best_ROC_AUC  best_Brier  best_F1  n_configs  seconds
+    LogReg       0.5226        0.6073      0.2367   0.4231          9      7.9
+GaussianNB       0.5172        0.6028      0.4332   0.1176          4      0.6
+    HistGB       0.8940        0.9261      0.1063   0.8382         16     25.1
+
+Saved: kt3/out/best_params.json
+Используйте эти параметры на последующих этапах эксперимента (import json; json.load(open('kt3/out/best_params.json'))['best_params']).

@@ -1,0 +1,4 @@
+model,best_PR_AUC,best_ROC_AUC,best_Brier,best_F1,n_configs,seconds
+LogReg,0.5226,0.6073,0.2367,0.4231,9,7.9
+GaussianNB,0.5172,0.6028,0.4332,0.1176,4,0.6
+HistGB,0.894,0.9261,0.1063,0.8382,16,25.1
