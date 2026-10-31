@@ -1,4 +1,0 @@
-held_out_source,model,n_test,pos_rate,PR_AUC,ROC_AUC,Brier
-Source2,LogReg,2951,0.4338,0.4357,0.4987,0.4074
-Source2,GaussianNB,2951,0.4338,0.4338,0.5,0.5662
-Source2,HistGB,2951,0.4338,0.4338,0.5,0.4053
