@@ -1,0 +1,85 @@
+Loading C:\Users\musai\.cache\kagglehub\datasets\sobhanmoosavi\us-accidents\versions\13\US_Accidents_March23.csv (rows=None) ...
+Loaded 7,728,394 rows; sources: ['Source1', 'Source2', 'Source3']
+
+======================================================================
+1. Composition & target rate by source
+               n  sev_rate  sev_mean   share
+Source
+Source1  4325632    0.0813    2.1188  0.5597
+Source2  3305373    0.3392    2.3330  0.4277
+Source3    97389    0.3173    2.2767  0.0126
+
+======================================================================
+2. Spatial-temporal duplicates (R<=150 m, |dt|<=6 h или пересечение интервалов)
+                         n_rows: 7,728,394
+                       n_groups: 6,773,248
+                  dup_row_share: 0.2030
+                dup_group_share: 0.0906
+      groups_multi_source_share: 0.0024
+       sev_agreement_within_dup: 0.9903
+
+   Cross-source severity agreement:
+                    n_pairs   agree  bias(Source2-Source1)  bias(Source3-Source1)  bias(Source3-Source2)
+Source1 vs Source2  12490.0  0.7228                 0.0665                    NaN                    NaN
+Source1 vs Source3   1750.0  0.5777                    NaN                 0.2943                    NaN
+Source2 vs Source3   2052.0  0.8855                    NaN                    NaN                -0.0071
+
+======================================================================
+3. Feature bias between sources (PSI/KS vs Source1)
+        feature  source  psi_vs_ref  ks_vs_ref  mean_diff  median_diff
+   Distance(mi) Source3      4.4528     0.8406    -0.7775       -0.283
+   Distance(mi) Source2      3.8926     0.8148    -0.6202       -0.283
+   Pressure(in) Source2      0.1353     0.1516     0.2731        0.130
+Wind_Speed(mph) Source2      0.0853     0.0950     0.3061        0.000
+ Temperature(F) Source3      0.0566     0.0576     0.5752        0.000
+Wind_Speed(mph) Source3      0.0390     0.0846    -0.9163       -1.000
+   Pressure(in) Source3      0.0332     0.0771     0.1288        0.060
+    Humidity(%) Source2      0.0154     0.0485     2.7374        3.000
+ Visibility(mi) Source3      0.0076     0.0217     0.0005        0.000
+ Temperature(F) Source2      0.0059     0.0367     1.2200        1.400
+    Humidity(%) Source3      0.0041     0.0190     0.2620        1.000
+ Visibility(mi) Source2      0.0025     0.0131     0.0103        0.000
+   Distance(mi) Source1      0.0000     0.0000     0.0000        0.000
+ Temperature(F) Source1      0.0000     0.0000     0.0000        0.000
+ Visibility(mi) Source1      0.0000     0.0000     0.0000        0.000
+   (PSI > 0.2 — существенный сдвиг, 0.1–0.2 — умеренный)
+
+   Binary feature prevalence spread:
+Source          Source1  Source2  Source3  max_range
+Traffic_Signal   0.0906   0.2223   0.1747     0.1318
+Crossing         0.0896   0.1439   0.1089     0.0543
+Junction         0.0913   0.0506   0.0927     0.0421
+Stop             0.0243   0.0320   0.0335     0.0092
+Amenity          0.0109   0.0146   0.0080     0.0066
+Railway          0.0078   0.0098   0.0108     0.0030
+Station          0.0259   0.0264   0.0248     0.0016
+Bump             0.0005   0.0004   0.0004     0.0001
+
+======================================================================
+4. Missingness by source
+         Distance(mi)  Temperature(F)  Humidity(%)  Pressure(in)  Visibility(mi)  Wind_Speed(mph)  Precipitation(in)  Bump  Crossing  Junction  Railway  Station  Stop  Traffic_Signal  Amenity
+Source
+Source1           0.0          0.0245       0.0260        0.0211          0.0258           0.0480             0.1445   0.0       0.0       0.0      0.0      0.0   0.0             0.0      0.0
+Source2           0.0          0.0168       0.0180        0.0144          0.0192           0.1081             0.4698   0.0       0.0       0.0      0.0      0.0   0.0             0.0      0.0
+Source3           0.0          0.0212       0.0223        0.0170          0.0202           0.0641             0.2623   0.0       0.0       0.0      0.0      0.0   0.0             0.0      0.0
+
+======================================================================
+5. Temporal profile
+Source  Source1  Source2  Source3
+year
+2016.0    0.315    0.681    0.004
+2017.0    0.237    0.752    0.011
+2018.0    0.188    0.800    0.013
+2019.0    0.275    0.705    0.020
+2020.0    0.595    0.386    0.019
+2021.0    0.681    0.305    0.013
+2022.0    0.814    0.173    0.013
+2023.0    1.000      NaN      NaN
+
+Median Start_Time per source:
+Source
+Source1    2020-12-31
+Source2    2019-03-01
+Source3    2020-03-02
+
+Saved df with group_id -> kt3/df_with_groups.csv.gz
