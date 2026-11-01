@@ -1,0 +1,21 @@
+model,metric,best_train_frac,smoothed_value,raw_value,std,on_boundary
+DecisionTree,Balanced Accuracy,0.1,0.8755,0.8755,0.0035,True
+DecisionTree,F1,0.1,0.8481,0.8481,0.0044,True
+DecisionTree,PR-AUC,0.1,0.8991,0.8991,0.0044,True
+DecisionTree,ROC-AUC,0.1,0.9426,0.9426,0.0013,True
+GaussianNB,Balanced Accuracy,0.375,0.5947,0.5947,0.0007,False
+GaussianNB,F1,0.375,0.6045,0.6045,0.0023,False
+GaussianNB,PR-AUC,0.1,0.5182,0.5182,0.0019,True
+GaussianNB,ROC-AUC,0.1,0.6543,0.6543,0.0039,True
+LogReg,Balanced Accuracy,0.225,0.5742,0.5742,0.0036,False
+LogReg,F1,0.1,0.4003,0.4003,0.0033,True
+LogReg,PR-AUC,0.1,0.5218,0.5218,0.0044,True
+LogReg,ROC-AUC,0.1,0.6616,0.6616,0.0049,True
+RandomForest,Balanced Accuracy,0.125,0.7774,0.7774,0.0066,False
+RandomForest,F1,0.125,0.7298,0.7298,0.0074,False
+RandomForest,PR-AUC,0.125,0.7806,0.7806,0.0038,False
+RandomForest,ROC-AUC,0.125,0.8627,0.8627,0.0015,False
+XGBoost,Balanced Accuracy,0.1,0.9005,0.9005,0.0032,True
+XGBoost,F1,0.1,0.8776,0.8776,0.0036,True
+XGBoost,PR-AUC,0.225,0.9263,0.9265,0.005,False
+XGBoost,ROC-AUC,0.225,0.957,0.9571,0.0027,False

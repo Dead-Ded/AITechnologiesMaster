@@ -1,0 +1,204 @@
+{
+  "protocol": "dedup by group_id, target Severity>=3, GroupKFold repeats (n_splits=min(5, 1/frac)), holdout 20% groups reserved",
+  "train_fracs": [
+    0.1,
+    0.125,
+    0.15,
+    0.175,
+    0.2,
+    0.225,
+    0.25,
+    0.275,
+    0.3,
+    0.325,
+    0.35,
+    0.375,
+    0.4,
+    0.425,
+    0.45,
+    0.475,
+    0.5
+  ],
+  "best": [
+    {
+      "model": "DecisionTree",
+      "metric": "Balanced Accuracy",
+      "best_train_frac": 0.1,
+      "smoothed_value": 0.8755,
+      "raw_value": 0.8755,
+      "std": 0.0035,
+      "on_boundary": true
+    },
+    {
+      "model": "DecisionTree",
+      "metric": "F1",
+      "best_train_frac": 0.1,
+      "smoothed_value": 0.8481,
+      "raw_value": 0.8481,
+      "std": 0.0044,
+      "on_boundary": true
+    },
+    {
+      "model": "DecisionTree",
+      "metric": "PR-AUC",
+      "best_train_frac": 0.1,
+      "smoothed_value": 0.8991,
+      "raw_value": 0.8991,
+      "std": 0.0044,
+      "on_boundary": true
+    },
+    {
+      "model": "DecisionTree",
+      "metric": "ROC-AUC",
+      "best_train_frac": 0.1,
+      "smoothed_value": 0.9426,
+      "raw_value": 0.9426,
+      "std": 0.0013,
+      "on_boundary": true
+    },
+    {
+      "model": "GaussianNB",
+      "metric": "Balanced Accuracy",
+      "best_train_frac": 0.375,
+      "smoothed_value": 0.5947,
+      "raw_value": 0.5947,
+      "std": 0.0007,
+      "on_boundary": false
+    },
+    {
+      "model": "GaussianNB",
+      "metric": "F1",
+      "best_train_frac": 0.375,
+      "smoothed_value": 0.6045,
+      "raw_value": 0.6045,
+      "std": 0.0023,
+      "on_boundary": false
+    },
+    {
+      "model": "GaussianNB",
+      "metric": "PR-AUC",
+      "best_train_frac": 0.1,
+      "smoothed_value": 0.5182,
+      "raw_value": 0.5182,
+      "std": 0.0019,
+      "on_boundary": true
+    },
+    {
+      "model": "GaussianNB",
+      "metric": "ROC-AUC",
+      "best_train_frac": 0.1,
+      "smoothed_value": 0.6543,
+      "raw_value": 0.6543,
+      "std": 0.0039,
+      "on_boundary": true
+    },
+    {
+      "model": "LogReg",
+      "metric": "Balanced Accuracy",
+      "best_train_frac": 0.225,
+      "smoothed_value": 0.5742,
+      "raw_value": 0.5742,
+      "std": 0.0036,
+      "on_boundary": false
+    },
+    {
+      "model": "LogReg",
+      "metric": "F1",
+      "best_train_frac": 0.1,
+      "smoothed_value": 0.4003,
+      "raw_value": 0.4003,
+      "std": 0.0033,
+      "on_boundary": true
+    },
+    {
+      "model": "LogReg",
+      "metric": "PR-AUC",
+      "best_train_frac": 0.1,
+      "smoothed_value": 0.5218,
+      "raw_value": 0.5218,
+      "std": 0.0044,
+      "on_boundary": true
+    },
+    {
+      "model": "LogReg",
+      "metric": "ROC-AUC",
+      "best_train_frac": 0.1,
+      "smoothed_value": 0.6616,
+      "raw_value": 0.6616,
+      "std": 0.0049,
+      "on_boundary": true
+    },
+    {
+      "model": "RandomForest",
+      "metric": "Balanced Accuracy",
+      "best_train_frac": 0.125,
+      "smoothed_value": 0.7774,
+      "raw_value": 0.7774,
+      "std": 0.0066,
+      "on_boundary": false
+    },
+    {
+      "model": "RandomForest",
+      "metric": "F1",
+      "best_train_frac": 0.125,
+      "smoothed_value": 0.7298,
+      "raw_value": 0.7298,
+      "std": 0.0074,
+      "on_boundary": false
+    },
+    {
+      "model": "RandomForest",
+      "metric": "PR-AUC",
+      "best_train_frac": 0.125,
+      "smoothed_value": 0.7806,
+      "raw_value": 0.7806,
+      "std": 0.0038,
+      "on_boundary": false
+    },
+    {
+      "model": "RandomForest",
+      "metric": "ROC-AUC",
+      "best_train_frac": 0.125,
+      "smoothed_value": 0.8627,
+      "raw_value": 0.8627,
+      "std": 0.0015,
+      "on_boundary": false
+    },
+    {
+      "model": "XGBoost",
+      "metric": "Balanced Accuracy",
+      "best_train_frac": 0.1,
+      "smoothed_value": 0.9005,
+      "raw_value": 0.9005,
+      "std": 0.0032,
+      "on_boundary": true
+    },
+    {
+      "model": "XGBoost",
+      "metric": "F1",
+      "best_train_frac": 0.1,
+      "smoothed_value": 0.8776,
+      "raw_value": 0.8776,
+      "std": 0.0036,
+      "on_boundary": true
+    },
+    {
+      "model": "XGBoost",
+      "metric": "PR-AUC",
+      "best_train_frac": 0.225,
+      "smoothed_value": 0.9263,
+      "raw_value": 0.9265,
+      "std": 0.005,
+      "on_boundary": false
+    },
+    {
+      "model": "XGBoost",
+      "metric": "ROC-AUC",
+      "best_train_frac": 0.225,
+      "smoothed_value": 0.957,
+      "raw_value": 0.9571,
+      "std": 0.0027,
+      "on_boundary": false
+    }
+  ]
+}
