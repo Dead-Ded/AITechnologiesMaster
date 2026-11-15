@@ -1,0 +1,49 @@
+{
+  "n_rows_total": 444949,
+  "n_train": 333711,
+  "n_test": 111238,
+  "pos_rate_test": 0.19607508225606357,
+  "n_model_columns": 10,
+  "columns": [
+    "Street",
+    "Source",
+    "Airport_Code",
+    "na_Precipitation(in)",
+    "Zipcode",
+    "State",
+    "Traffic_Signal",
+    "month",
+    "hour",
+    "City"
+  ],
+  "evr_first5": [
+    0.3114,
+    0.1446,
+    0.1014,
+    0.0996,
+    0.098
+  ],
+  "k_for_95_variance": 9,
+  "best_k_by_roc_auc": 10,
+  "best_roc_auc": 0.9077,
+  "plateau_k_within_0p002": 9,
+  "no_pca": {
+    "roc_auc": 0.924290748685792,
+    "pr_auc": 0.7978792719958849,
+    "fit_sec": 1.72,
+    "pred_ms_median": 219.7
+  },
+  "lda_best": {
+    "method": "LDA",
+    "k": 1,
+    "roc_auc": 0.8542199018487076,
+    "pr_auc": 0.6792339126549031,
+    "f1": 0.652862673186634,
+    "bal_acc": 0.7678990490265956,
+    "fit_sec": 1.65,
+    "pred_ms_median": 474.2,
+    "pred_ms_p90": 479.8,
+    "pred_ms_mean": 474.0,
+    "rows_per_sec": 234701
+  }
+}
