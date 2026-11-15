@@ -1,0 +1,23 @@
+Задание 2. Линейный дискриминантный анализ (US Accidents).
+Выборка: 443,663 аварий после дедупликации, признаков из задания 1: 10.
+
+1. Бинарная цель Severity >= 3: число компонент ограничено min(n_features, C-1) = 1, подбор вырожден.
+   KT3 baseline   ROC-AUC 0.6288, F1 0.0003, bal.acc 0.5000
+   KT4 selected   ROC-AUC 0.8551, F1 0.6362, bal.acc 0.7545
+   Ручное направление Фишера против sklearn: |cos| = 1.000000, ROC-AUC проекции 0.8551.
+
+2. Severity как 4 класса, перебор k = 1..3:
+   k=1 LDA           F1macro 0.4044, bal.acc 0.3996, ROC-AUC(ovr) 0.8354
+   k=1 LDA + LogReg  F1macro 0.4023, bal.acc 0.3955, ROC-AUC(ovr) 0.7177
+   k=2 LDA           F1macro 0.4044, bal.acc 0.3996, ROC-AUC(ovr) 0.8354
+   k=2 LDA + LogReg  F1macro 0.4037, bal.acc 0.3965, ROC-AUC(ovr) 0.8229
+   k=3 LDA           F1macro 0.4044, bal.acc 0.3996, ROC-AUC(ovr) 0.8354
+   k=3 LDA + LogReg  F1macro 0.4037, bal.acc 0.3965, ROC-AUC(ovr) 0.8355
+   explained_variance_ratio_ по осям: [0.9411 0.0524 0.0091]
+
+3. Оптимальное число компонент (минимальное k в пределах 0.002 от максимума macro F1):
+   LDA: k = 1 (F1macro 0.4044)
+   LDA + LogReg: k = 1 (F1macro 0.4023)
+   Ориентир без сжатия, LogReg на всех 10 признаках: F1macro 0.4045.
+
+Артефакты: task2_lda_components.csv, task2_summary.txt, графики task2_*.png.
