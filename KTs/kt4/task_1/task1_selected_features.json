@@ -1,0 +1,67 @@
+{
+  "kt3_baseline": [
+    "Distance(mi)",
+    "Temperature(F)",
+    "Humidity(%)",
+    "Pressure(in)",
+    "Visibility(mi)",
+    "Wind_Speed(mph)",
+    "Precipitation(in)",
+    "Bump",
+    "Crossing",
+    "Junction",
+    "Railway",
+    "Station",
+    "Stop",
+    "Traffic_Signal",
+    "Amenity"
+  ],
+  "selected": [
+    "Street",
+    "Source",
+    "Airport_Code",
+    "na_Precipitation(in)",
+    "Zipcode",
+    "State",
+    "Traffic_Signal",
+    "month",
+    "hour",
+    "City"
+  ],
+  "leakage": [
+    "duration_min",
+    "Distance(mi)",
+    "End_Lat",
+    "End_Lng",
+    "has_end"
+  ],
+  "redundant": {
+    "na_Temperature(F)": "na_Humidity(%)",
+    "Astronomical_Twilight": "Nautical_Twilight"
+  },
+  "quasi_constant": [
+    "Bump",
+    "Give_Way",
+    "Roundabout",
+    "No_Exit",
+    "Traffic_Calming"
+  ],
+  "constant": [
+    "Turning_Loop",
+    "Country"
+  ],
+  "core_and_reserve": [
+    "Street",
+    "Source",
+    "Airport_Code",
+    "City",
+    "Zipcode",
+    "na_Precipitation(in)",
+    "County",
+    "State",
+    "Traffic_Signal",
+    "Weather_Condition",
+    "hour",
+    "month"
+  ]
+}

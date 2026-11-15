@@ -1,0 +1,30 @@
+Задание 1. Анализ информативности признаков (US Accidents, Severity >= 3).
+Выборка: 443,663 аварий после дедупликации по group_id, доля тяжёлых 0.197. Признаков в анализе: 48 (числовых 15, бинарных 19, категориальных 14).
+
+1. Аудит. Константы: Turning_Loop, Country. Почти константы (top-значение >= 99.5%): Bump, Give_Way, Roundabout, No_Exit, Traffic_Calming.
+   Максимальный перекос пропусков между классами: End_Lng (40.1 п.п.), поэтому индикаторы пропусков добавлены как отдельные признаки.
+
+2. Фильтры. Топ по mutual information: Street (0.094), Zipcode (0.084), duration_min (0.075), End_Lng (0.069), Start_Lng (0.064), End_Lat (0.063).
+   Топ по IV: End_Lng (0.833), End_Lat (0.793), has_end (0.706), Source (0.706), duration_min (0.491), Distance(mi) (0.384).
+   Топ по одиночному ROC-AUC: Street (0.277), Zipcode (0.254), City (0.220), Airport_Code (0.214), Source (0.202), has_end (0.202).
+   Признаков с IV >= 0.3 вне списка утечки: 1 (Source).
+
+3. Избыточность. Пар с |Spearman| >= 0.9: 2, к удалению как дубли отобрано 2: na_Temperature(F), Astronomical_Twilight.
+
+4. Модельные оценки. Топ по permutation importance (падение ROC-AUC): Street (0.048), has_end (0.045), duration_min (0.037), Zipcode (0.032), Distance(mi) (0.011), End_Lng (0.006).
+   Drop-column по top-10: Street (0.010), duration_min (0.009), Zipcode (0.006), Distance(mi) (0.002), Traffic_Signal (0.001), hour (0.001).
+   Согласие методов (Spearman MI vs permutation): 0.82, impurity леса vs permutation: 0.92.
+
+5. Постфактумные признаки: duration_min, Distance(mi), End_Lat, End_Lng, has_end. Их суммарный вклад в ROC-AUC (все признаки минус все без утечки): +0.0157.
+
+6. Обёртка. Отобрано 10 признаков: Street, Source, Airport_Code, na_Precipitation(in), Zipcode, State, Traffic_Signal, month, hour, City.
+   ROC-AUC на валидации после последнего шага: 0.9201.
+
+7. Проверка на модели (один и тот же XGBoost, отложенная выборка):
+   KT3 baseline (15)        ROC-AUC 0.7848, PR-AUC 0.4428, F1@0.5 0.2243, bal.acc 0.5569
+   KT4 selected (10)        ROC-AUC 0.9234, PR-AUC 0.7921, F1@0.5 0.7215, bal.acc 0.8117
+   все без утечки           ROC-AUC 0.9301, PR-AUC 0.8069, F1@0.5 0.7337, bal.acc 0.8190
+   все признаки             ROC-AUC 0.9458, PR-AUC 0.8299, F1@0.5 0.7522, bal.acc 0.8355
+   Прирост отобранного набора относительно базового из КТ3: +0.1386 ROC-AUC.
+
+Артефакты: task1_audit.csv, task1_filters.csv, task1_feature_ranking.csv, task1_feature_sets.csv, task1_selected_features.json и графики task1_*.png.
